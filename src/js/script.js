@@ -486,7 +486,7 @@
           cartProduct: thisCartProduct,
         },
       });
-      thisCartProduct.dom.wrapper, dispatchEvent(event);
+      thisCartProduct.dom.wrapper.dispatchEvent(event);
     }
 
     initActions() {
