@@ -63,12 +63,13 @@ class Cart {
     thisCart.deliveryFee = settings.cart.defaultDeliveryFee;
     thisCart.totalNumber = 0;
     thisCart.subTotalPrice = 0;
-    thisCart.totalPrice = 0;
 
     for (let product of thisCart.products) {
       thisCart.totalNumber += product.amount;
       thisCart.subTotalPrice += product.price;
     }
+
+    thisCart.totalPrice = thisCart.subTotalPrice + thisCart.deliveryFee;
 
     if(thisCart.subTotalPrice !== 0){
       thisCart.dom.deliveryFee.innerHTML = thisCart.deliveryFee;
