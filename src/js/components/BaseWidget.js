@@ -11,7 +11,7 @@ class BaseWidget {
 
     return thisWidget.correctValue;
   }
-  set value(value) {
+  set value(value){
     const thisWidget = this;
 
     const newValue = thisWidget.parseValue(value);
@@ -26,23 +26,23 @@ class BaseWidget {
 
     thisWidget.announce();
   }
-  setValue(value) {
+  setValue(value){
     const thisWidget = this;
 
     thisWidget.value = value;
   }
-  parseValue(value) {
+  parseValue(value){
     return parseInt(value);
   }
-  isValid(value) {
+  isValid(value){
     return !isNaN(value);
   }
-  renderValue() {
+  renderValue(){
     const thisWidget = this;
 
     thisWidget.dom.wrapper.innerHTML = thisWidget.value;
   }
-  announce() {
+  announce(){
     const thisWidget = this;
 
     //const event = new Event('updated');

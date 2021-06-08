@@ -1,6 +1,6 @@
 import AmountWidget from './AmountWidget.js';
 import { select, classNames, templates } from '/js/settings.js';
-import { utils } from '../utils.js';
+import utils from '../utils.js';
 
 
 class Product {
