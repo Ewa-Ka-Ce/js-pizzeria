@@ -1,5 +1,5 @@
 import AmountWidget from './AmountWidget.js';
-import { select, classNames, templates } from '/js/settings.js';
+import { select, classNames, templates } from '../settings.js';
 import utils from '../utils.js';
 
 

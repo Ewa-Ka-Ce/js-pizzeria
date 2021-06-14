@@ -255,15 +255,5 @@
      "starters": ["lemonWater"]
    }
  ],
- "booking": [
-   {
-      "id": 1,
-      "date": "2021-06-14",
-      "hour": "16:00",
-      "table": 1,
-      "duration": 3,
-      "ppl": 4,
-      "starters": ["water"]
-   }
-]
+ "booking": []
 }
