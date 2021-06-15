@@ -4,12 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <!-- trying to solve Cannot GET /vendor/flickity.min.css problem-->
+  <base href="/">
   <title>Pizzeria</title>
   <link href="https://fonts.googleapis.com/css?family=Lato:400,300i,700%7COswald:300,500,700&amp;subset=latin-ext" rel="stylesheet">
   <link href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
   <link rel="stylesheet" href="vendor/range-slider.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+  <link rel="stylesheet" href="css/style.css">
 
 </head>
 <body>
@@ -22,6 +25,7 @@
           <h2 class="logo__subtitle">the best homemade Italian food</h2>
         </div>
         <div class="main-nav">
+          <a href="#home">Home</a>
           <a href="#order">Order</a>
           <a href="#booking">Booking</a>
         </div>
@@ -63,6 +67,9 @@
   </header>
 
   <div id="pages">
+    <section id="home">
+    <div class="home-wrapper container"></div>
+  </section>
     <section id="order">
       <div id="product-list" class="product-list container"></div>
     </section>
@@ -70,6 +77,123 @@
       <div class="booking-wrapper container"></div>
     </section>
   </div>
+
+  <script id="template-home-widget" type="text/x-handlebars-template">
+    <div class="home-container">
+
+      <div class="options">
+        <div class="order-online">
+          <a href="#/order">
+            <h2>ORDER ONLINE</h2>
+            <p>Delicious food delivered to your door</p>
+          </a>
+        </div>
+        <div class="book-table">
+          <a href="#/book">
+            <h2>BOOK A TABLE</h2>
+            <p>Amazing moments in our restaurant</p>
+          </a>
+        </div>
+        <div class="opening-hours">
+          <h2>OPENING HOURS</h2>
+          <p>TUE-SUN, 12AM - 12PM</p>
+        </div>
+      </div>
+
+      <div class="main-carousel" data-flickity>
+        <div class="carousel-cell">
+          <div class="carousel-image">
+            <img src="images/home/pizza-3.jpg">
+          </div>
+          <div class="carousel-post">
+            <h3>Fantastic place</h3>
+            <p>Lorem imsum Lorem imsum Lorem imsum Lorem imsum Lorem imsum Lorem imsum Lorem imsum Lorem imsum</p>
+            <p>Mark Hastle</p>
+          </div>
+        </div>
+        <div class="carousel-cell">
+          <div class="carousel-image">
+            <img src="images/home/pizza-3.jpg">
+          </div>
+          <div class="carousel-post">
+            <h3>Best Service</h3>
+            <p>Lorem imsum Lorem imsum Lorem imsum Lorem imsum Lorem imsum Lorem imsum Lorem imsum Lorem imsum</p>
+            <p>John Smith</p>
+          </div>
+        </div>
+        <div class="carousel-cell">
+          <div class="carousel-image">
+            <img src="images/home/pizza-3.jpg">
+          </div>
+          <div class="carousel-post">
+            <h3>Good snacks</h3>
+            <p>Lorem imsum Lorem imsum Lorem imsum Lorem imsum Lorem imsum Lorem imsum Lorem imsum Lorem imsum</p>
+            <p>Kaslik Amanov</p>
+          </div>
+        </div>
+        <div class="carousel-cell">
+          <div class="carousel-image">
+            <img src="images/home/pizza-3.jpg">
+          </div>
+          <div class="carousel-post">
+            <h3>Delicious food</h3>
+            <p>Lorem imsum Lorem imsum Lorem imsum Lorem imsum Lorem imsum Lorem imsum Lorem imsum Lorem imsum</p>
+            <p>Ruspert Sasanov</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery">
+        <div class="box">
+          <img src="images/home/pizza-4.jpg">
+          <ul class="overlay">
+            <li><a href="#"><i class="fas fa-heart"></i></a></li>
+            <li><a href="#"><i class="fas fa-share-alt"></i></a></li>
+          </ul>
+        </div>
+        <div class="box">
+          <img src="images/home/pizza-5.jpg">
+          <ul class="overlay">
+            <li><a href="#"><i class="fas fa-heart"></i></a></li>
+            <li><a href="#"><i class="fas fa-share-alt"></i></a></li>
+          </ul>
+        </div>
+        <div class="box">
+          <img src="images/home/pizza-6.jpg">
+          <ul class="overlay">
+            <li><a href="#"><i class="fas fa-heart"></i></a></li>
+            <li><a href="#"><i class="fas fa-share-alt"></i></a></li>
+          </ul>
+        </div>
+        <div class="box">
+          <img src="images/home/pizza-7.jpg">
+          <ul class="overlay">
+            <li><a href="#"><i class="fas fa-heart"></i></a></li>
+            <li><a href="#"><i class="fas fa-share-alt"></i></a></li>
+          </ul>
+        </div>
+        <div class="box">
+          <img src="images/home/pizza-8.jpg">
+          <ul class="overlay">
+            <li><a href="#"><i class="fas fa-heart"></i></a></li>
+            <li><a href="#"><i class="fas fa-share-alt"></i></a></li>
+          </ul>
+        </div>
+        <div class="box">
+          <img src="images/home/pizza-9.jpg">
+          <ul class="overlay">
+            <li><a href="#"><i class="fas fa-heart"></i></a></li>
+            <li><a href="#"><i class="fas fa-share-alt"></i></a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer">
+        <a href="#">View more on Instagram</a>
+      </div>
+
+    </div>
+  </script>
 
   <script id="template-cart-product" type="text/x-handlebars-template">
     <li>
@@ -247,6 +371,7 @@
   <script src="js/app.js" type="module"></script>
   <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
   <script src="vendor/range-slider.min.js"></script>
+  <script src="vendor/flickity.pkgd.min.js"></script>
 
 </body>
 </html>

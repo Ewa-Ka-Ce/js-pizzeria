@@ -1,11 +1,8 @@
-import {
-  settings,
-  classNames,
-  select
-} from './settings.js';
+import {settings, classNames, select} from './settings.js';
 import Product from './components/Product.js';
 import Cart from './components/Cart.js';
 import Booking from './components/Booking.js';
+import Home from './components/Home.js';
 
 
 export const app = {
@@ -104,6 +101,15 @@ export const app = {
     new Booking(thisApp.reservationWrapper);
   },
 
+  initHome: function(){
+    const thisApp = this;
+
+    thisApp.homeWrapper = document.querySelector(select.containerOf.home);
+
+    new Home(thisApp.homeWrapper);
+  },
+
+
   initCart: function () {
     const thisApp = this;
 
@@ -124,6 +130,7 @@ export const app = {
     //thisApp.initMenu();
     thisApp.initCart();
     thisApp.initBooking();
+    thisApp.initHome();
   },
 
 };
